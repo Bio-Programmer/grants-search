@@ -55,25 +55,42 @@ export async function getSimilarGrants(searchQuery: string, numResults: number =
         const { embedding: queryEmbedding } = await response.json();
         console.log('Got query embedding of length:', queryEmbedding?.length);
         
+        console.log('Fetching embeddings.json...');
         const response2 = await fetch('/embeddings.json');
+        if (!response2.ok) {
+            throw new Error(`Failed to load embeddings: ${response2.status} ${response2.statusText}`);
+        }
         const embeddingsData = await response2.json();
-        console.log('Sample embedding from file:', {
+        console.log('Loaded embeddings data:', {
+            numEmbeddings: Object.keys(embeddingsData).length,
             firstKey: Object.keys(embeddingsData)[0],
+            hasG1567: 'g1567' in embeddingsData,
             sampleEmbedding: embeddingsData[Object.keys(embeddingsData)[0]]?.slice(0, 3)
         });
         
-        const similarities = Object.entries(embeddingsData).map(([grantId, embedding]) => {
-            console.log(`Processing grant ${grantId}:`, {
-                embeddingType: typeof embedding,
-                isArray: Array.isArray(embedding),
-                length: (embedding as any)?.length
+        // Check if g1567 exists in embeddings
+        if ('g1567' in embeddingsData) {
+            console.log('g1567 embedding found:', {
+                embedding: embeddingsData['g1567']?.slice(0, 5),
+                length: embeddingsData['g1567']?.length
             });
-            
-            return {
-                grantId,
-                similarity: cosineSimilarity(queryEmbedding, embedding as number[])
-            };
+        } else {
+            console.log('g1567 not found in embeddings data');
+        }
+
+        const similarities = Object.entries(embeddingsData).map(([grantId, embedding]) => {
+            const similarity = cosineSimilarity(queryEmbedding, embedding as number[]);
+            if (grantId === 'g1567') {
+                console.log('g1567 similarity score:', similarity);
+            }
+            return { grantId, similarity };
         });
+
+        // Log top 10 results
+        const topResults = similarities
+            .sort((a, b) => b.similarity - a.similarity)
+            .slice(0, 10);
+        console.log('Top 10 results:', topResults);
         
         console.log('Calculated similarities for', similarities.length, 'grants');
         

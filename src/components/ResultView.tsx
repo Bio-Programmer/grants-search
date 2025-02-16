@@ -10,13 +10,19 @@ interface ResultViewProps {
 
 export function ResultView({ grants, searchQuery = "" }: ResultViewProps): React.ReactElement {
     const [similarGrantIds, setSimilarGrantIds] = useState<string[]>([]);
+    const [isSearching, setIsSearching] = useState(false);
 
     useEffect(() => {
         const fetchSimilarGrants = async () => {
             if (searchQuery.trim()) {
-                const ids = await getSimilarGrants(searchQuery);
-                console.log('Received similar grant IDs:', ids);
-                setSimilarGrantIds(ids);
+                setIsSearching(true);
+                try {
+                    const ids = await getSimilarGrants(searchQuery);
+                    console.log('Received similar grant IDs:', ids);
+                    setSimilarGrantIds(ids);
+                } finally {
+                    setIsSearching(false);
+                }
             } else {
                 setSimilarGrantIds([]);
             }
@@ -46,14 +52,18 @@ export function ResultView({ grants, searchQuery = "" }: ResultViewProps): React
 
     return (
         <div className="container mx-auto px-8 pr-12">
-            {sortedAndFilteredGrants.length === 0 ? (
+            {isSearching ? (
                 <div className="text-center text-gray-500">
-                    No grants found matching your criteria :(
+                    Searching...
+                </div>
+            ) : sortedAndFilteredGrants.length === 0 ? (
+                <div className="text-center text-gray-500">
+                    No grants found matching your criteria
                 </div>
             ) : (
                 <ul className="space-y-4">
                     {sortedAndFilteredGrants.map((grant) => (
-                        <li key={grant.title}>
+                        <li key={grant.id}>
                             <GrantCard grant={grant} />
                         </li>
                     ))}

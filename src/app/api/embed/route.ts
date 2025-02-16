@@ -16,10 +16,10 @@ export async function POST(request: Request) {
             input: text,
         });
 
-        // console.log('OpenAI response:', {
-        //     embeddingLength: response.data[0].embedding.length,
-        //     firstFewValues: response.data[0].embedding.slice(0, 3)
-        // });
+        console.log('OpenAI response:', {
+            embeddingLength: response.data[0].embedding.length,
+            firstFewValues: response.data[0].embedding.slice(0, 3)
+        });
 
         return NextResponse.json({ embedding: response.data[0].embedding });
     } catch (error) {

@@ -82,7 +82,7 @@ export default function Home() {
                     </h1>
                     <p className="text-center text-lg mb-6 mt-9 px-1 text-white">
                         <span className="inline-block">
-                            Stanford has money, but it's often tucked away. Ergo, this search engine!
+                        Search over 1,500 grants to find the right funding for your project.
                         </span>
                         &nbsp;
                     </p>
@@ -96,7 +96,7 @@ export default function Home() {
                                     onSearch={setSearchQuery}
                                 />
                                 <p className="text-sm italic text-white mt-2 text-center">
-                                    Examples: a guitar amp for a new band, a new student cafe to revive social life, compute resources for an AI experiment
+                                    Examples: Cancer biology research, a guitar amp for a new band, a late night student cafe, compute resources for an AI experiment
                                 </p>
                             </div>
                         </div>
