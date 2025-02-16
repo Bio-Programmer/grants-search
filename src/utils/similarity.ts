@@ -5,8 +5,20 @@ type EmbeddingsData = {
 }
 
 function cosineSimilarity(a: number[], b: number[]): number {
-    console.log('Vector A length:', a?.length, 'First few values:', a?.slice(0, 3));
-    console.log('Vector B length:', b?.length, 'First few values:', b?.slice(0, 3));
+    console.log('Debug vectors:', {
+        vectorA: {
+            value: a,
+            type: typeof a,
+            isArray: Array.isArray(a),
+            constructor: a?.constructor?.name
+        },
+        vectorB: {
+            value: b,
+            type: typeof b,
+            isArray: Array.isArray(b),
+            constructor: b?.constructor?.name
+        }
+    });
     
     if (!Array.isArray(a) || !Array.isArray(b)) {
         console.error('Invalid vectors - not arrays:', { a: typeof a, b: typeof b });
