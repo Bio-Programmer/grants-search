@@ -1,0 +1,161 @@
+{
+    "g1": {
+        "title": "SERI 2025 Research Fellowship",
+        "description": "The Stanford Existential Risks Initiative will fund 10-week full-time research projects dedicated to mitigating existential risks, such as nuclear war, engineered pandemics, AI deployments, and environmental changes. The program emphasizes community building among researchers through speaker events, discussion groups, and social events. Students will work under the guidance of mentors including faculty members, postdoctoral scholars, or industry experts.",
+        "eligibility": [
+            "Undergraduate",
+            "Masters Student",
+            "Coterm",
+            "PhD"
+        ],
+        "amount_min": 7500,
+        "amount_max": 7500,
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLScLRbrn89CLK5I0YY8vajVXgkYfNBhJB_hNi1QW0bokt2bQtg/viewform",
+        "deadline": "2025-05-15T23:59:59-08:00",
+        "next_cycle_start": ""
+    },
+    "g2": {
+        "title": "HAI Graduate Fellowship Program",
+        "description": "The Institute for Human-Centered Artificial Intelligence (HAI) offers a 3-quarter program for Stanford Graduate Students. The goal of this program is to encourage interdisciplinary research conversations, facilitate new collaborations, and grow the HAI community of graduate scholars who are working in the area of AI, broadly defined. The fellowship fosters collaboration between engineers, social scientists, humanists, and others researching the future of purposeful, intentional, and human-centered AI. HAI graduate fellows will: Participate in mandatory bi-weekly seminars with HAI Affiliated Faculty, guest speakers, HAI postdocs, and fellow cohort members. Participate in events with other HAI Fellows (i.e., paper/proposal workshops, practice job talks, training opportunities, and socials). Contribute to a final group project (i.e., poster session, blog post, student-led event) Be located on campus for all 3 quarters during AY 2024-2025 (fall, winter, spring) The fellowship will pay $1,000 per quarter.",
+        "eligibility": [
+            "Masters Student",
+            "PhD",
+            "Postdoc"
+        ],
+        "amount_min": 1000,
+        "amount_max": 1000,
+        "url": "https://hai.stanford.edu/research/fellowship-programs",
+        "deadline": "2025-05-08T23:59-08:00",
+        "next_cycle_start": ""
+    },
+    "g3": {
+        "title": "HAI Postdoctoral Fellowship Program",
+        "description": "HAI's Postdoctoral Fellowship Program offers opportunities to explore topics, conduct research, and collaborate across disciplines related to AI technologies, applications, or impact. Fellows will have the opportunity to contribute to the research goals of the faculty/lab/center/research team they will join, in addition to advancing their own scholarship and research skills. In the spirit of cross-disciplinary collaboration and community building, fellows will also be required to engage in HAI programming to develop the skills necessary to further their research, careers, and the mission of HAI: advancing AI research, education, policy, and practice to improve the human condition. HAI will be seeking postdoctoral applicants from all areas of research related to artificial intelligence, spanning theoretical foundations, systems, software, applications, design, and social impact. HAI is particularly interested in applicants doing research at the frontiers of artificial intelligence with other disciplines, including but not limited to the humanities, business, education, law, medicine, and physical and social sciences.",
+        "eligibility": [
+            "Postdoc"
+        ],
+        "amount_min": -1,
+        "amount_max": -1,
+        "url": "https://hai.stanford.edu/research/fellowship-programs",
+        "deadline": "",
+        "next_cycle_start": "2025-01-20T00:00-08:00"
+    },
+    "g4": {
+        "title": "HAI Seed Grant Proposals",
+        "description": "The Institute for Human-Centered Artificial Intelligence's vision for the future is led by the commitment to promote human-centered uses of AI, design for it using human-centered methods, and ensure that humanity benefits from the technology and that the benefits are broadly shared. Along these lines, we seek proposals that support new, ambitious, and speculative ideas with the objective of getting initial results. We welcome proposals from the whole array of humanistic, social scientific, natural scientific, biomedical, and engineering approaches, including critical, historical, ethnographic, clinical, experimental, and inventive work from discrete studies to research for book publications to speaker series to system building and evaluation. We especially aim to fund collaborations of faculty and students whose work bridges two or more disciplines and proposals that can make a persuasive case that these initial results will catalyze further support from internal and external stakeholders. We expect to award approximately 25 grants, up to $75,000 each for a one-year period. HAI and the Center for Artificial Intelligence in Medicine & Imaging (AIMI) are simultaneously offering a separate funding opportunity, a joint call for proposals up to $200,000 for two years. Additional guidance on which funding source is most appropriate for your project, and other frequently asked questions, can be found here. You cannot submit the same research for both opportunities; however, the review committee may forward proposals submitted for the HAI general call for consideration to the HAI-AIMI call.",
+        "eligibility": [
+            "Faculty",
+            "Postdoc",
+            "PhD"
+        ],
+        "amount_min": 75000,
+        "amount_max": 75000,
+        "url": "https://hai.stanford.edu/seed-research-grants",
+        "deadline": "",
+        "next_cycle_start": "2025-06-01T23:59-08:00"
+    },
+    "g5": {
+        "title": "SCI 2024 Equity Impact Research Grants",
+        "description": "In recent years, the incidence and mortality for most types of cancer in California have declined; however, disparities persist for historically marginalized communities. For example, the cancer incidence rate for all cancers combined is lower among Black women and men compared to non-Hispanic White women and men, but death rates are higher. The Stanford Cancer Institute (SCI), Office of Cancer Health Equity is pleased to offer a call for cancer health equity proposals. Applicants can respond to one or more of the tracks outlined below. The Stanford Cancer Institute serves Santa Clara, San Mateo, Santa Cruz, Alameda, Contra Costa, Monterey, San Benito, San Joaquin, Stanislaus, and Merced counties, prioritizing lung, breast, pancreatic, liver, and lymphoma cancers. For both tracks, we welcome proposals that focus on these counties and priority cancers in addition to the incorporation of data collection and/or analysis component. Challenge awards will be granted for 2 years and up to $100,000. Seed grant awards will be granted for 1 year and up to $50,000.",
+        "eligibility": [
+            "Faculty",
+            "Postdoc",
+            "Other"
+        ],
+        "amount_min": 50000,
+        "amount_max": 100000,
+        "url": "https://seedfunding.stanford.edu/opportunities/sci-2024-equity-impact-research-grants",
+        "deadline": "2025-05-03T17:00-08:00",
+        "next_cycle_start": "2025-03-03T00:00-08:00"
+    },
+    "g6": {
+        "title": "Stanford Impact Labs Design Fellowship",
+        "description": "Fellows participate in a monthly workshop, receive $50,000 in seed funding, and benefit from the specialized attention of Stanford Impact Labs professional staff who provide input on problem definition, partnerships, team design, and communication. The fellowship supports faculty, with funding and guidance, to conceptualize a new research project that seeks to develop tangible solutions to a social problem, by working in collaboration with an external partner. For the 2024-2025 cohort, the Stanford Doerr School of Sustainability (SDSS) is sponsoring up to 3 positions in the fellowship for SDSS faculty. The Institute for Advancing Just Societies is sponsoring up to 2 positions in the fellowships for projects that address inequalities related to race and ethnicity, broadly conceived, that register locally, nationally, or globally. Evaluation process and criteria are the same for all applicants. Fellowship Program Once a month, fellows gather for a three-hour, interactive, activity- and discussion-based workshop.",
+        "eligibility": ["Faculty"],
+        "amount_min": 50000,
+        "amount_max": 50000,
+        "url": "https://impact.stanford.edu/apply/open-applications",
+        "deadline": "2025-01-20T23:59-08:00",
+        "next_cycle_start": ""
+    },
+    "g7": {
+        "title": "Conference Grant",
+        "description": "Conference Grants support students who have been accepted to *present* at professional/scholarly convenings that have (1) competitive peer-reviewed selection processes and (2) attract a multi-generational body of presenters (not undergraduate-only conferences) Students are eligible to receive only one Conference Grant per academic year Graduating seniors can apply for conference grant funding to present at a conference that takes place within one quarter (including summer) of degree conferral. Co-terms who have not conferred their undergraduate degree may apply if the project fits into their undergraduate academic trajectory, e.g., honors thesis, capstone project, etc. Students paying graduate tuition are ineligible.",
+        "eligibility": ["Undergraduate", "Coterm"],
+        "amountMin": 0,
+        "amountMax": 1500,
+        "url": "https://undergradresearch.stanford.edu/fund-your-project/explore-student-grants/conference",
+        "deadline": "2025-01-01T23:59-08:00",
+        "nextCycleStartDate": "2025-10-01T00:00-08:00"
+    },
+    "g8": {
+        "title": "Chappell Lougee Scholarship",
+        "description": "Chappell Lougee Scholarships provide a 10-week stipend for Sophomores pursuing full-time immersive projects in the humanities, creative arts, and qualitative social sciences. Chappell Lougee Scholars receive mentorship from current PhD students as they prepare for their projects in the Spring and conduct their projects in the Summer. Decisions are made in the first half of Winter Quarter.",
+        "eligibility": ["Undergraduate"],
+        "amountMin": 7500,
+        "amountMax": 9000,
+        "url": "https://undergradresearch.stanford.edu/fund-your-project/explore-student-grants/chappell-lougee",
+        "deadline": "",
+        "nextCycleStartDate": "2023-10-01T00:00-08:00"
+    },
+    "g9": {
+        "title": "The William W. and Janet F. Crandall Beagle II Award",
+        "description": "The William W. and Janet F. Crandall Beagle II Award acknowledges exemplary undergraduate student research projects that embody discovery, exploration, possess a strong intellectual curiosity, a passionate interest in a particular subject, and a keen spirit of intellectual adventure.",
+        "eligibility": ["Undergraduate"],
+        "amountMin": null,
+        "amountMax": null,
+        "url": "https://undergradresearch.stanford.edu/fund-your-project/explore-student-grants/beagleII",
+        "deadline": "",
+        "nextCycleStartDate": ""
+    },
+    "g10": {
+        "title": "Small Grant",
+        "description": "Small Grants support smaller independent student-driven projects, and can also be used to enable a particular phase of a larger-scale effort. Application deadlines are quarterly. You should plan to apply for funding *at least one quarter in advance* of your project's start date. Project activities must reflect future project activities; for example, Autumn Small Grants largely fund project activities to be completed in Winter or Spring quarter. We do not fund projects retroactively. Decisions are typically made within 6 weeks, and funding is disbursed approximately 3 weeks from award announcements.",
+        "eligibility": ["Undergraduate", "Coterm"],
+        "amountMin": 0,
+        "amountMax": 1500,
+        "url": "https://undergradresearch.stanford.edu/fund-your-project/explore-student-grants/small",
+        "deadline": "",
+        "nextCycleStartDate": "2025-01-17T00:00-08:00"
+      },
+    "g11": {
+        "title": "Major Grant",
+        "description": "Major grants support student-driven, full-time immersive projects supported by a faculty mentor, with priority given to Juniors. Major Grants provide a 10-week stipend in support of full-time immersive Summer project commitments Most Major Grants are awarded to students beginning an honors thesis, a senior project in the arts, or senior synthesis project between their junior and senior years. Decisions are typically made within 6 weeks. Funding is usually disbursed Week 1 of the quarter in which the project is executed. Major Grant proposals should not exceed a word count of 2,500. The proposal summary, reference list, and appendices do not count toward the word count. Human Subjects Research - IRB protocol submission: If you are doing a project involving interviewing, observing, or otherwise working with human subjects, you must determine if your project requires Institutional Review Board (IRB) review. Animal Subjects Research - one-paragraph appendix: If your research involves animal subjects of any kind (vertebrate or invertebrate), you must include an Animal Subjects Research Appendix in your application. Field contact letter: For students interviewing individuals and/or partnering with off-campus organizations for their projects (e.g. archives, hospitals, nonprofits, community organizations), you must submit in your grant application a brief letter of support from your field contact to demonstrate that you have established communication and are equipped to execute the project with their support. International Travel Safety Plan: A project or conference that involves international travel is required to have an International Travel Safety Plan.",
+        "eligibility": ["Undergraduate", "Coterm"],
+        "amountMin": 7500,
+        "amountMax": 9000,
+        "url": "",
+        "deadline": "",
+        "nextCycleStartDate": "2025-03-01T00:00-08:00"
+    },
+    "g12": {
+        "title": "Student Campus Engagement Mini-Grants",
+        "description": "The Office of Community Engagement is excited to announce the 2023-24 campus engagement mini-grants! These mini-grants foster creative ideas for new, exciting, and/or meaningful ways to connect and engage with one another. Your ideas-come-to-life build community and contribute to a vibrant campus life, providing opportunities for students to form new connections with people, places, and perspectives. For student-led engagement activities in the 2023-24 academic year intended to support broad-based engagement activities open to the entire student community that activate and enliven campus spaces, create excitement, and engage the community. Maximum $2,000 grant. Organizers may receive mini-grant funding support once for the year. New applications and applicants will be prioritized. Funds are available to all students (including those not acting on behalf of or affiliated with a VSO).",
+        "eligibility": ["Undergraduate", "Masters Student", "Coterm", "PhD", "Other"],
+        "amountMin": 0,
+        "amountMax": 2000,
+        "url": "bit.ly/student-minigrant-app",
+        "deadline": "2025-02-18T23:59:59-08:00",
+        "nextCycleStartDate": ""
+    },
+    "g13": {
+        "title": "Robotics Club Funding",
+        "description": "Rolling funding for student robotics projects.",
+        "eligibility": ["Undergraduate", "Masters Student", "Coterm", "PhD", "Other"],
+        "amountMin": 0,
+        "amountMax": 10000,
+        "url": "stanfordstudentrobotics.org",
+        "deadline": "",
+        "nextCycleStartDate": ""
+    },
+    "g14": {
+        "title": "HAI Student Affinity Groups",
+        "description": "HAI Student Affinity Groups are small teams of interdisciplinary Stanford students (undergraduates, graduates) or postdocs who have a shared interest in a topic related to the development or study of human-centered AI. Affinity Groups provide a space for students to share ideas, develop intellectually and strengthen the community of future leaders dedicated to building AI that benefits all of humanity. Funding of up to $1,000 for the academic year to spend on small quarterly or biweekly gatherings, such as: workshopping lunches, student-hosted speakers, book discussions or discussion series. Inside scoop on HAI events, research, publications, and volunteer opportunities.",
+        "eligibility": ["Undergraduate", "Masters Student", "Coterm", "PhD", "Other"],
+        "amountMin": 0,
+        "amountMax": 1000,
+        "url": "https://hai.stanford.edu/research/student-affinity-groups",
+        "deadline": "2025-08-23T23:59:59-08:00",
+        "nextCycleStartDate": ""
+    }
+}
