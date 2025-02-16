@@ -43,11 +43,11 @@ export async function getSimilarGrants(searchQuery: string, numResults: number =
         const { embedding: queryEmbedding } = await response.json();
         console.log('Got query embedding of length:', queryEmbedding?.length);
         
-        const embeddings = await import('@/internal/embeddings.json');
-        const embeddingsData = embeddings.default as EmbeddingsData;
+        const response2 = await fetch('/embeddings.json');
+        const embeddingsData = await response2.json();
         console.log('Sample embedding from file:', {
             firstKey: Object.keys(embeddingsData)[0],
-            sampleEmbedding: embeddingsData[Object.keys(embeddingsData)[0]].slice(0, 3)
+            sampleEmbedding: embeddingsData[Object.keys(embeddingsData)[0]]?.slice(0, 3)
         });
         
         const similarities = Object.entries(embeddingsData).map(([grantId, embedding]) => {
