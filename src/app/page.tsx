@@ -1,101 +1,118 @@
-import Image from "next/image";
+'use client'
+
+import {useEffect, useState} from "react";
+import {
+    AcademicPosition,
+    FilterState, Grant,
+    GrantDatabase,
+    RepresentingVSO,
+    SortBy,
+    SortOrder
+} from "@/internal/types";
+import {filterGrants} from "@/internal/filter";
+import {ResultView} from "@/components/ResultView";
+import {readDatabase} from "@/internal/backend";
+import {Filter} from "@/components/Filter";
+
+const SearchInput = ({ value, onChange, onSearch }: { value: string, onChange: (value: string) => void, onSearch: (value: string) => void }) => {
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            onSearch(value);
+        } else if (e.key === ' ') {
+            onSearch(value);
+        }
+    };
+
+    return (
+        <input
+            className="w-full rounded-3xl py-3 pl-6 pr-3 bg-white text-black-1000"
+            type="search"
+            placeholder="What do you need funding for?"
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            onKeyDown={handleKeyPress}
+        />
+    );
+};
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    let [filterState, setFilterState] = useState<FilterState>({
+        minAmount: null,
+        positions: [],
+        representingVSOs: [],
+        sortBy: SortBy.defaultValue,
+        sortOrder: SortOrder.defaultValue
+    });
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    let [inputValue, setInputValue] = useState("");
+    let [searchQuery, setSearchQuery] = useState("");
+    let [grantDatabase, setGrantDatabase] = useState<GrantDatabase|null>(null);
+
+    // Load the grant database
+    useEffect(() => {
+        const fetchGrants = async () => {
+            try {
+                const data = await readDatabase();
+                console.log('Fetched grants:', data);
+                setGrantDatabase(data);
+            } catch (error) {
+                console.error('Error loading database:', error);
+            }
+        };
+        fetchGrants();
+    }, []);
+
+    let eligibleGrants = [] as Grant[];
+    if(grantDatabase !== null) {
+        console.log('Processing grants from database:', grantDatabase);
+        let grants = Object.values(grantDatabase);
+        console.log('Grants array after Object.values:', grants);
+        eligibleGrants = filterGrants(grants, filterState);
+        console.log('Eligible grants after filtering:', eligibleGrants);
+    }
+
+    return (
+        <main className="min-h-screen bg-white">
+            <div className="bg-cardinal-red-dark w-full pt-10">
+                <div className="container mx-auto md:p-4 md:pb-10">
+                    <h1 className="text-center text-4xl font-bold my-6 px-1 text-white">
+                        <span className="inline-block">Need money for a </span>{' '}
+                        <span className="underline">project</span>,{' '}
+                        <span className="inline-block">but unsure how to fund it?</span>
+                    </h1>
+                    <p className="text-center text-lg mb-6 mt-9 px-1 text-white">
+                        <span className="inline-block">
+                            Stanford has money, but it's often tucked away. Ergo, this search engine!
+                        </span>
+                        &nbsp;
+                    </p>
+
+                    <div className="flex flex-col grow sm:rounded-2xl">
+                        <div className="my-2 flex justify-center">
+                            <div className="w-full max-w-4xl">
+                                <SearchInput 
+                                    value={inputValue} 
+                                    onChange={setInputValue} 
+                                    onSearch={setSearchQuery}
+                                />
+                                <p className="text-sm italic text-white mt-2 text-center">
+                                    Examples: a guitar amp for a new band, a new student cafe to revive social life, compute resources for an AI experiment
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div className="flex gap-4 pt-8">
+                <div className="w-64">
+                    <Filter filterState={filterState} onFilterChange={setFilterState} />
+                </div>
+                <div className="flex-1">
+                    <ResultView grants={eligibleGrants} searchQuery={searchQuery} />
+                </div>
+            </div>
+        </main>
+    );
 }
